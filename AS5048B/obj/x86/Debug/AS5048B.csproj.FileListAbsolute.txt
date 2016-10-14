@@ -1,0 +1,5 @@
+C:\Users\Ben\Documents\Projects\AS5048B\AS5048B\bin\Debug\AS5048B.exe
+C:\Users\Ben\Documents\Projects\AS5048B\AS5048B\bin\Debug\AS5048B.pdb
+C:\Users\Ben\Documents\Projects\AS5048B\AS5048B\obj\x86\Debug\AS5048B.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\Projects\AS5048B\AS5048B\obj\x86\Debug\AS5048B.exe
+C:\Users\Ben\Documents\Projects\AS5048B\AS5048B\obj\x86\Debug\AS5048B.pdb
