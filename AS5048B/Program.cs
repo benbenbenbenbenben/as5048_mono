@@ -11,6 +11,8 @@ namespace AS5048B
 			MainWindow win = new MainWindow ();
 			win.Show ();
 			Application.Run ();
+
+
 		}
 	}
 }
