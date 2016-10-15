@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AS5048B
 {
@@ -16,8 +17,8 @@ namespace AS5048B
 			var names = System.IO.Ports.SerialPort.GetPortNames ();
 			foreach (var name in names)
 			{
-				foundPorts.Add (port);
 				var port = new System.IO.Ports.SerialPort (name);
+				foundPorts.Add (port);
 				foreach (var rate in bauds) 
 				{
 					var buffer = new byte[] { 0x3F, 0x3F, 0x3F, 0x3F };
