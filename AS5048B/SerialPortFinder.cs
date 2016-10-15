@@ -18,18 +18,21 @@ namespace AS5048B
 			foreach (var name in names)
 			{
 				var port = new System.IO.Ports.SerialPort (name);
-				foundPorts.Add (port);
+
 				foreach (var rate in bauds) 
 				{
-					var buffer = new byte[] { 0x3F, 0x3F, 0x3F, 0x3F };
-					var expectedBuffer = new byte[] { 0xBB, 0xBB, 0xBB, 0xBB };
+					var expectedString = "AS5048B";
+					var expectedBuffer = expectedString.ToCharArray();
+					var actualBuffer = new char[expectedString.Length];
 					port.BaudRate = rate;
-					port.Write (buffer, 0, buffer.Length);
-					port.Read (buffer, 0, buffer.Length);
-					for (int i = 0; i < buffer.Length; i++) {
-						if (buffer [i] != expectedBuffer [i]) {
-							foundPorts.Remove (port);
-							break;
+					var read = port.Read (actualBuffer, 0, buffer.Length);
+					if (read == 7) {
+						try {
+							var actualString = new string (actualBuffer);
+							if (actualString.Equals (expectedString)) {
+								foundPorts.Add (port);
+							}
+						} catch {
 						}
 					}
 				}
